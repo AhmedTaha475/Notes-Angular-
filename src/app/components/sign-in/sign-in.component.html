@@ -1,0 +1,19 @@
+<section id="signin">
+    <div class="myForm position-absolute w-50">
+        <form [formGroup]="signIn" (ngSubmit)="login()">
+
+            <div class="form-group ">
+                <input type="email" class="form-control" formControlName="email" placeholder="Enter your email">
+            </div>
+
+            <div class="form-group">
+                <input type="password" class="form-control" formControlName="password"
+                    placeholder="Enter your Password">
+            </div>
+
+            <button class="btn btn-info w-100" type="submit"><span *ngIf="! buttonflag">Sign in</span> <span
+                    *ngIf="buttonflag">Waiting....</span></button>
+            <p *ngIf="alertFlag" class="text-danger text-center mt-3">Wrong Email or Password</p>
+        </form>
+    </div>
+</section>

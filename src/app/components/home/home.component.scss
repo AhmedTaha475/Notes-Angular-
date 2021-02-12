@@ -1,0 +1,18 @@
+#home{
+    background-color: #666666;
+    min-height: 100vh;
+    .single-note{
+        width: 250px;
+        min-height: 200px;
+        background-color: #ccffcc;
+        box-shadow: rgba(33, 33, 33, 0.8) 5px 5px 7px 0px;
+        margin: 20px 0;
+        i{
+            cursor: pointer;
+        }
+        .edit{
+            background-color: white;
+            color: #17a2b8;
+        }
+    }
+}

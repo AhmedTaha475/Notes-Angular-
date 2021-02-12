@@ -1,0 +1,63 @@
+<section id="signup">
+    <div class="myForm position-absolute w-50">
+        <form [formGroup]="signUp" (ngSubmit)="regData()">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group ">
+                        <input type="text" class="form-control"
+                            [class.is-invalid]="!signUp.controls.first_name.valid&&signUp.controls.first_name.touched"
+                            [class.is-valid]="signUp.controls.first_name.valid&&signUp.controls.first_name.touched"
+                            formControlName="first_name" placeholder="Enter First Name">
+                        <p class="text-danger text-center"
+                            *ngIf="!signUp.controls.first_name.valid&&signUp.controls.first_name.touched">First name not
+                            valid
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="last_name"
+                            [class.is-invalid]="!signUp.controls.last_name.valid&&signUp.controls.last_name.touched"
+                            [class.is-valid]="signUp.controls.last_name.valid&&signUp.controls.last_name.touched"
+                            placeholder="Enter Last Name">
+                        <p class="text-danger text-center"
+                            *ngIf="!signUp.controls.last_name.valid&&signUp.controls.last_name.touched">Last name not
+                            valid</p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group ">
+                <input type="email" class="form-control" formControlName="email" placeholder="Enter your email"
+                    [class.is-invalid]="!signUp.controls.email.valid&&signUp.controls.email.touched"
+                    [class.is-valid]="signUp.controls.email.valid&&signUp.controls.email.touched">
+                <p class="text-danger text-center" *ngIf="!signUp.controls.email.valid&&signUp.controls.email.touched">
+                    Email not valid</p>
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" formControlName="age" placeholder="Enter your Age"
+                    [class.is-invalid]="!signUp.controls.age.valid&&signUp.controls.age.touched"
+                    [class.is-valid]="signUp.controls.age.valid&&signUp.controls.age.touched">
+                <p class="text-danger text-center" *ngIf="!signUp.controls.age.valid&&signUp.controls.age.touched">Age
+                    between [20,80]
+                </p>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" formControlName="password" placeholder="Enter your Password"
+                    [class.is-invalid]="!signUp.controls.password.valid&&signUp.controls.password.touched"
+                    [class.is-valid]="signUp.controls.password.valid&&signUp.controls.password.touched">
+                <p class="text-danger text-center"
+                    *ngIf="!signUp.controls.password.valid&&signUp.controls.password.touched">min 8 chars with at
+                    least one number and one char</p>
+            </div>
+
+            <button class="btn btn-info w-100" type="submit"><span *ngIf="!signupFlag">Sign up</span> <span
+                    *ngIf="signupFlag">Waiting....</span></button>
+            <div class="alert alert-danger text-center mt-4" *ngIf="dataAlertFlagFail" role="alert">
+                <strong>Email already registered</strong>
+            </div>
+            <div class="alert alert-success text-center mt-4" *ngIf="dataAlertFlagSuccess" role="alert">
+                <strong>success</strong>
+            </div>
+        </form>
+    </div>
+</section>

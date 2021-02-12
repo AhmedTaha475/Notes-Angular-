@@ -1,0 +1,18 @@
+
+nav{
+    background-color: #343a40;
+    .navbar-brand{
+        color: white;
+    }
+    
+    .nav-item{
+        .nav-link{
+            color: white;
+          
+        }
+        &:hover{
+            color: white;
+        }
+    }
+    
+}
